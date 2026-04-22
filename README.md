@@ -1,70 +1,117 @@
-# Getting Started with Create React App
+# Invoice Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A fully functional, responsive Invoice Management Application built with **React**.  
+This app allows users to create, manage, and track invoices with modern UI and state persistence.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+[Live App URL](https://your-vercel-link.vercel.app)
 
-### `npm start`
+## GitHub Repository
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://github.com/SirTee33/invoice-app
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+### Core Functionality
+- Create invoices
+- View invoice list
+- View invoice details
+- Edit existing invoices
+- Delete invoices (with confirmation modal)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Status Management
+- Save invoices as **Draft**
+- Save invoices as **Pending**
+- Mark invoices as **Paid**
+- Prevent invalid status changes (e.g., Paid → Draft)
 
-### `npm run build`
+### Filtering
+- Filter invoices by:
+  - All
+  - Draft
+  - Pending
+  - Paid
+- Instant UI updates
+- Empty state when no results match
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Form Validation
+- Required fields enforced:
+  - Client name
+  - Email
+  - Total
+- Email format validation
+- Prevent submission if invalid
+- Visual error feedback
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### UI / UX
+- Clean SaaS-style design
+- Hover states for all interactive elements
+- Smooth transitions and feedback
+- Responsive layout (mobile, tablet, desktop)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Theme Toggle
+- Light / Dark mode
+- Persistent theme using LocalStorage
 
-### `npm run eject`
+### Data Persistence
+- All invoices stored in **LocalStorage**
+- Data remains after refresh
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Tech Stack
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React (Functional Components + Hooks)
+- CSS (Custom styling, Flexbox)
+- LocalStorage API
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Architecture
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The app is structured into reusable components:
 
-## Learn More
+- `InvoiceList` → Main page (list, filter, theme)
+- `InvoiceForm` → Create / Edit form
+- Detail View → Displays selected invoice
+- Modal → Delete confirmation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+State is managed using React hooks:
+- `useState`
+- `useEffect`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Accessibility
 
-### Code Splitting
+- Semantic HTML elements used
+- Buttons use `<button>` (not divs)
+- Form inputs have labels
+- Modal:
+  - Can be closed with **ESC key**
+  - Keyboard accessible
+- Good color contrast for both light and dark modes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Responsiveness
 
-### Analyzing the Bundle Size
+- Mobile-first design
+- Breakpoints:
+  - 320px+
+  - 768px+
+  - 1024px+
+- Layout adapts without overflow
+- Cards and forms scale properly across devices
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Trade-offs
 
-### Making a Progressive Web App
+- Used LocalStorage instead of backend for simplicity
+- Invoice items kept minimal (no advanced calculations)
+- No authentication system included
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Known Limitations
 
-### Advanced Configuration
+- No backend/database (data is local only)
+- No user authentication
+- Invoice IDs are randomly generated (not sequential)
+- Limited invoice item structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Setup Instructions
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Clone the repo:
+```bash
+git clone https://github.com/SirTee33/invoice-app.git
