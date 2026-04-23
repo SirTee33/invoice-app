@@ -57,19 +57,20 @@ body {
 }
 
 .invoice-card {
-  padding: 20px;
-  border-radius: 18px;
-  margin-bottom: 14px;
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-  transition: all 0.25s ease;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border: 1px solid #f0f0f0;
 }
 
 .invoice-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.1);
+  border: 1px solid #7c5dfa;
 }
 
 .invoice-card h3 {
@@ -82,26 +83,25 @@ body {
 }
 
 .status {
-  padding: 6px 10px;
+  padding: 6px 12px;
   border-radius: 999px;
   font-size: 12px;
-  font-weight: 600;
-  text-transform: capitalize;
-}
-
-.status.pending {
-  background: #fff7ed;
-  color: #f59e0b;
+  font-weight: 700;
 }
 
 .status.paid {
-  background: #ecfdf5;
-  color: #10b981;
+  background: rgba(51, 214, 159, 0.1);
+  color: #33d69f;
+}
+
+.status.pending {
+  background: rgba(255, 143, 0, 0.1);
+  color: #ff8f00;
 }
 
 .status.draft {
-  background: #f3f4f6;
-  color: #6b7280;
+  background: rgba(55, 59, 83, 0.1);
+  color: #373b53;
 }
 
 .form-container {
@@ -200,7 +200,6 @@ input:focus, select:focus {
 }
 
 .detail-card {
-  width: 100%;
   max-width: 600px;
   background: white;
   border-radius: 16px;

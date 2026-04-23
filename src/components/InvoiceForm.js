@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const InvoiceForm = ({ onAdd, onClose, existingInvoice }) => {
+const InvoiceForm = ({ onAdd, onClose, existingInvoice, invoices = [] }) => {
   const [clientName, setClientName] = useState(
     existingInvoice?.clientName || ""
   );
@@ -12,6 +12,19 @@ const InvoiceForm = ({ onAdd, onClose, existingInvoice }) => {
   );
 
   const [error, setError] = useState("");
+
+  // 🔥 Generate clean 4-digit invoice ID
+  const generateInvoiceId = (invoices) => {
+    const existingIds = new Set(invoices.map((inv) => inv.id));
+
+    let id;
+
+    do {
+      id = `INV-${Math.floor(1000 + Math.random() * 9000)}`;
+    } while (existingIds.has(id));
+
+    return id;
+  };
 
   const validate = () => {
     if (!clientName.trim()) return "Client name is required";
@@ -37,7 +50,8 @@ const InvoiceForm = ({ onAdd, onClose, existingInvoice }) => {
     const newInvoice = {
       id: existingInvoice
         ? existingInvoice.id
-        : "INV-" + Date.now(),
+        : generateInvoiceId(invoices),
+
       clientName,
       email,
       total: Number(total),
@@ -55,44 +69,53 @@ const InvoiceForm = ({ onAdd, onClose, existingInvoice }) => {
   };
 
   return (
-    <section className="form-container">
-      <h2>{existingInvoice ? "Edit Invoice" : "New Invoice"}</h2>
+    <section className="form-container" aria-labelledby="form-title">
+      <h2 id="form-title">
+        {existingInvoice ? "Edit Invoice" : "New Invoice"}
+      </h2>
 
       {error && (
         <p className="error-text" role="alert">
-          {error}
+          ⚠ {error}
         </p>
       )}
 
       <form onSubmit={(e) => e.preventDefault()}>
 
-        <label htmlFor="clientName">Client Name</label>
-        <input
-          id="clientName"
-          type="text"
-          value={clientName}
-          onChange={(e) => setClientName(e.target.value)}
-          className={!clientName && error ? "error" : ""}
-        />
+        {/* Client Name */}
+        <div className="form-group">
+          <label htmlFor="clientName">Client Name</label>
+          <input
+            id="clientName"
+            type="text"
+            value={clientName}
+            onChange={(e) => setClientName(e.target.value)}
+          />
+        </div>
 
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className={!email && error ? "error" : ""}
-        />
+        {/* Email */}
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
 
-        <label htmlFor="total">Total</label>
-        <input
-          id="total"
-          type="number"
-          value={total}
-          onChange={(e) => setTotal(e.target.value)}
-          className={!total && error ? "error" : ""}
-        />
+        {/* Total */}
+        <div className="form-group">
+          <label htmlFor="total">Total</label>
+          <input
+            id="total"
+            type="number"
+            value={total}
+            onChange={(e) => setTotal(e.target.value)}
+          />
+        </div>
 
+        {/* Buttons */}
         <div className="form-buttons">
           <button
             type="button"
