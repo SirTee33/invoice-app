@@ -149,8 +149,11 @@ const InvoiceList = () => {
 
       <header className="header">
         <div className="header-left">
-          <h1>Invoices</h1>
-          <p>{filteredInvoices.length} invoices</p>
+          <h1>Invoice Manager</h1>
+          <p className="invoice-count">
+            Showing {filteredInvoices.length}{" "}
+            {filteredInvoices.length === 1 ? "invoice" : "invoices"}
+          </p>
         </div>
 
         <div className="header-right">

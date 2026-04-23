@@ -13,7 +13,6 @@ const InvoiceForm = ({ onAdd, onClose, existingInvoice, invoices = [] }) => {
 
   const [error, setError] = useState("");
 
-  // 🔥 Generate clean 4-digit invoice ID
   const generateInvoiceId = (invoices) => {
     const existingIds = new Set(invoices.map((inv) => inv.id));
 
@@ -82,7 +81,6 @@ const InvoiceForm = ({ onAdd, onClose, existingInvoice, invoices = [] }) => {
 
       <form onSubmit={(e) => e.preventDefault()}>
 
-        {/* Client Name */}
         <div className="form-group">
           <label htmlFor="clientName">Client Name</label>
           <input
@@ -93,7 +91,6 @@ const InvoiceForm = ({ onAdd, onClose, existingInvoice, invoices = [] }) => {
           />
         </div>
 
-        {/* Email */}
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
@@ -104,7 +101,6 @@ const InvoiceForm = ({ onAdd, onClose, existingInvoice, invoices = [] }) => {
           />
         </div>
 
-        {/* Total */}
         <div className="form-group">
           <label htmlFor="total">Total</label>
           <input
@@ -115,7 +111,6 @@ const InvoiceForm = ({ onAdd, onClose, existingInvoice, invoices = [] }) => {
           />
         </div>
 
-        {/* Buttons */}
         <div className="form-buttons">
           <button
             type="button"
