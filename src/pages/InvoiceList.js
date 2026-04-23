@@ -9,7 +9,7 @@ const InvoiceList = () => {
       ? JSON.parse(saved)
       : [
         {
-          id: "INV-001",
+          id: "INV-0001",
           clientName: "John Doe",
           total: 250,
           status: "Pending",

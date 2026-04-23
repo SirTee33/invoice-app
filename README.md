@@ -5,7 +5,7 @@ This app allows users to create, manage, and track invoices with modern UI and s
 
 ## Live Demo
 
-[Live App URL](https://your-vercel-link.vercel.app)
+[Live App URL](https://invoice-app-sirtee.vercel.app/)
 
 ## GitHub Repository
 
@@ -14,6 +14,7 @@ https://github.com/SirTee33/invoice-app
 ## Features
 
 ### Core Functionality
+
 - Create invoices
 - View invoice list
 - View invoice details
@@ -21,12 +22,14 @@ https://github.com/SirTee33/invoice-app
 - Delete invoices (with confirmation modal)
 
 ### Status Management
+
 - Save invoices as **Draft**
 - Save invoices as **Pending**
 - Mark invoices as **Paid**
 - Prevent invalid status changes (e.g., Paid → Draft)
 
 ### Filtering
+
 - Filter invoices by:
   - All
   - Draft
@@ -36,6 +39,7 @@ https://github.com/SirTee33/invoice-app
 - Empty state when no results match
 
 ### Form Validation
+
 - Required fields enforced:
   - Client name
   - Email
@@ -45,16 +49,19 @@ https://github.com/SirTee33/invoice-app
 - Visual error feedback
 
 ### UI / UX
+
 - Clean SaaS-style design
 - Hover states for all interactive elements
 - Smooth transitions and feedback
 - Responsive layout (mobile, tablet, desktop)
 
 ### Theme Toggle
+
 - Light / Dark mode
 - Persistent theme using LocalStorage
 
 ### Data Persistence
+
 - All invoices stored in **LocalStorage**
 - Data remains after refresh
 
@@ -74,6 +81,7 @@ The app is structured into reusable components:
 - Modal → Delete confirmation
 
 State is managed using React hooks:
+
 - `useState`
 - `useEffect`
 
@@ -113,5 +121,7 @@ State is managed using React hooks:
 ## Setup Instructions
 
 1. Clone the repo:
+
 ```bash
 git clone https://github.com/SirTee33/invoice-app.git
+```

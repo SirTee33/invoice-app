@@ -205,6 +205,7 @@ input:focus, select:focus {
 }
 
 .detail-card {
+  width: 25%;
   max-width: 600px;
   background: white;
   border-radius: 16px;
@@ -240,9 +241,10 @@ input:focus, select:focus {
 }
 
 .detail-actions {
+  
   margin-top: 25px;
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 .detail-actions button {
